@@ -1,7 +1,17 @@
+import { css } from '@emotion/react';
 import Image from 'next/image';
+
+const footerStyles = css`
+  background-color: #53bd60;
+  padding: 10px 15 px;
+  border-radius: 4px;
+  margin-bottom: 8px 8px;
+  font-size: 2rem;
+`;
+
 export default function Footer() {
   return (
-    <footer>
+    <footer css={footerStyles}>
       <span>
         <Image
           src="/logo.png"

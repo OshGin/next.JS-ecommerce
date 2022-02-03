@@ -6,7 +6,7 @@ const headeStyles = css`
   background-color: #83eb83;
   padding: 10px 15 px;
   border-radius: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 8px 8px;
   font-size: 2rem;
 `;
 
