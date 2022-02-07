@@ -1,23 +1,30 @@
 import Head from 'next/head';
 import Layout from './components/Layout';
+import Image from 'next/image';
 
 export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>click and buy</title>
+        <title>Luca-Victoria-Karla Enzio-Barrabassa</title>
         <meta name="ecommerce picture store" content="click and buy" />
       </Head>
       <main>
-        <h1>Find your picture</h1>
+        <h1>Luca-Victoria-Karla Enzio-Barrabassa</h1>
+        <Image
+          src="/Luca-Victoria.jpg"
+          width={200}
+          height={300}
+          alt="Profil Picture"
+        />
         <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
-          commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus
-          et magnis dis parturient montes, nascetur ridiculus mus. Donec quam
-          felis, ultricies nec, pellentesque eu. <br /> pretium quis, sem. Nulla
-          consequat massa quis enim. Donec pede justo, fringilla vel, aliquet
-          nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
-          venenatis vitae, justo. <br />
+          Luca-Victoria-Karla Enzio-Barrabassa was born in winter 1988 in a
+          village that is now known as Markhof. In her early years, she desided
+          to travel the world and bring all sorts of interpretations back to her
+          friends and family. <br /> pretium quis, sem. Nulla consequat massa
+          quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate
+          eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
+          justo. <br />
           <br />
           Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras
           dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
