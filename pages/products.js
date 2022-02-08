@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Layout from './components/Layout';
 import { css } from '@emotion/react';
-import pictures from '../util/database';
+import pictures from './components/database';
 import Link from 'next/link';
 
 const buttonStyle = css`

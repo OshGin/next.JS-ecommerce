@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import pictures from '../../util/database';
+import pictures from '../components/database';
 
 export default function SinglePicture(props) {
   return (

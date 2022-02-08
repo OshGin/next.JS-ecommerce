@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import altai from '../public/altai.jpg';
-import chicago from '../public/chicago.jpg';
-import nightout from '../public/nightout.jpg';
-import sketch from '../public/sketch.jpg';
+import altai from '../../public/altai.jpg';
+import chicago from '../../public/chicago.jpg';
+import nightout from '../../public/nightout.jpg';
+import sketch from '../../public/sketch.jpg';
 const pictures = [
   {
     id: 1,
