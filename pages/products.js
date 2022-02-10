@@ -1,8 +1,9 @@
 import Head from 'next/head';
 import Layout from './components/Layout';
 import { css } from '@emotion/react';
-import pictures from './components/database';
+import pictures from '../util/database';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const buttonStyle = css`
   background-color: black;
@@ -12,27 +13,29 @@ const buttonStyle = css`
 `;
 
 const pictureStyle = css`
-  border-radius: 5px;
+  //border-radius: 5px;
   border: 1px solid black;
   padding: 15 px;
   margin-bottom: 20px;
 `;
 
-export default function ProductOverview() {
+export default function ProductOverview(props) {
   return (
     <Layout>
       <Head>
         <title>Product</title>
         <meta name="ecommerce picture store" content="product details" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <h1> Product Overview </h1>
-      {pictures.map((picture) => {
+      {props.pictures.map((picture) => {
         return (
           <div key={`id-${pictures.id}`} css={pictureStyle}>
             <h2>{picture.name}</h2>
-            {picture.preview}
+            <div css={pictureStyle}>
+              {' '}
+              <Image src={picture.preview} width="400px" height="400" />
+            </div>
             <br />
             <br />
             {picture.price} Clicks{' '}
@@ -52,8 +55,8 @@ export default function ProductOverview() {
   );
 }
 
-//export function getServerSideProps(contex) {
-//return {
-//props: { pictures: pictures },
-//};
-//}
+export function getServerSideProps() {
+  return {
+    props: { pictures: pictures },
+  };
+}
