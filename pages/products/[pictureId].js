@@ -1,40 +1,39 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
 import pictures from '../../util/database';
-import Image from 'next/image';
-import Link from 'next/link';
 
-export default function picture(props) {
-//  return (
-//    <div>
-//      <Layout>
-//        <Head>
-//          <title>details</title>
-//          <meta Product />
-//        </Head>
-//        <h1>Test text</h1>
-//        <h2>
-//          {' '}
-//          <Image src={pictures.preview} width="400px" height="400" />{//' '}
-//        </h2>//
-//      </Layout>//
-//    </div>
-//  );
-//}
+export default function pictureDetail(props) {
+  return (
+    <Layout>
+      <Head>
+        <title>Product Detail (title)</title>
+        <meta name="ecommerce picture store" content="product details" />
+      </Head>
+      <h1>More information about {props.title}</h1>
+      <div>ID-{props.pictuer.pictureId};</div>
+      <div>title-{props.pictuer.title};</div>
+      <div>discription-{props.pictuer.discription};</div>
+    </Layout>
+  );
+}
 
-//export async function getServerSideProps(context) {
-// anything that is after the products/{ in the URL}
-//const pictureId = context.query.pictureId;
+export function getServerSideProps(context) {
+  const pictureId = context.query.pictureId;
+  console.log('test', pictureId);
 
-// TODO: 1. get your pictures Import them
-// const allPictures = pictures;
-// 2. find the picture that match the number on pictureId
-//const preview = pictures.find(preview);
-//const singlePicture = preview(pictureId);
-// const picture = await pictures(pictureId);
-//return {
-//props: {
-//picture: singlePicture,
-// },
-//  };
-//}
+  const matchingPicture = pictures.find((picture) => {
+    // eslint-disable-next-line sonarjs/prefer-single-boolean-return
+    if (picture.id === pictureId) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+  console.log('pic', matchingPicture);
+  return {
+    props: {
+      //picture: matchingPicture,
+      //pictureId: pictureId,
+    },
+  };
+}

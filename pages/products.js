@@ -31,7 +31,7 @@ export default function ProductOverview(props) {
       {props.pictures.map((picture) => {
         return (
           <div key={`id-${pictures.id}`} css={pictureStyle}>
-            <h2>{picture.name}</h2>
+            <h2>{picture.title}</h2>
             <div css={pictureStyle}>
               {' '}
               <Image src={picture.preview} width="400px" height="400" />
