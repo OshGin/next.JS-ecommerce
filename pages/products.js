@@ -19,12 +19,14 @@ const pictureStyle = css`
   padding: 15 px;
   margin-bottom: 20px;
 `;
+//const addToCard = ()=>
 
 export default function ProductOverview(props) {
-  const [buyMe, setBuyMe] = useState(true);
+  const [buyMe, setBuyMe] = useState(true); //window.localStorage.getItem('buyMe')
   function buyByToggle() {
     setBuyMe(!buyMe);
   }
+
   return (
     <Layout>
       <Head>
