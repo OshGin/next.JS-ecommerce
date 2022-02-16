@@ -4,7 +4,8 @@ import { css } from '@emotion/react';
 import pictures from '../util/database';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { getLocalStorage, setLocalStorage } from '../util/localStorage';
 
 const buttonStyle = css`
   background-color: black;
@@ -22,10 +23,24 @@ const pictureStyle = css`
 //const addToCard = ()=>
 
 export default function ProductOverview(props) {
-  const [buyMe, setBuyMe] = useState(true); //window.localStorage.getItem('buyMe')
+  // const localStorage = typeof window !== 'undefined' ? window.localStorage : [];
+  // const initalBuyMe =
+  //   localStorage.getItem && localStorage.getItem('buyMe')
+  //     ? localStorage.getItem('buyMe')
+  //     : true;
+
+  const myBuyme = getLocalStorage('buyMe') || true;
+  const [buyMe, setBuyMe] = useState(myBuyme);
+
   function buyByToggle() {
+    const newBuyme = !buyMe;
     setBuyMe(!buyMe);
+    setLocalStorage('buyMe', newBuyme);
   }
+  useEffect(() => {
+    const mynewBuyme = getLocalStorage('buyMe') || false;
+    setBuyMe(mynewBuyme);
+  }, []);
 
   return (
     <Layout>
@@ -59,15 +74,16 @@ export default function ProductOverview(props) {
               </a>
             </Link>
             <button css={buttonStyle}>how many</button>
-
-            <button onClick={() => buyByToggle()} css={buttonStyle}>
-              {buyMe ? 'buy me' : 'remove me'}
-            </button>
             <br />
             <br />
           </div>
         );
       })}
+      <button onClick={() => buyByToggle()} css={buttonStyle}>
+        {buyMe ? 'remove me' : 'buy me'}
+      </button>
+      <br />
+      <br />
     </Layout>
   );
 }

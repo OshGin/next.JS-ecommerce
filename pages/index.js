@@ -6,11 +6,11 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>Luca-Victoria-Karla Enzio-Barrabassa</title>
+        <title>Lucia-Victoria-Karla Enzio-Barrabassa</title>
         <meta name="ecommerce picture store" content="click and buy" />
       </Head>
       <main>
-        <h1>Luca-Victoria-Karla Enzio-Barrabassa</h1>
+        <h1>Lucia-Victoria-Karla Enzio-Barrabassa</h1>
         <Image
           src="/Luca-Victoria.jpg"
           width={200}
@@ -18,7 +18,7 @@ export default function Home() {
           alt="Profil Picture"
         />
         <p>
-          Luca-Victoria-Karla Enzio-Barrabassa was born in winter 1988 in a
+          Lucia-Victoria-Karla Enzio-Barrabassa was born in winter 1988 in a
           village that is now known as Markhof. In her early years, she desided
           to travel the world and bring all sorts of interpretations back to her
           friends and family. <br /> pretium quis, sem. Nulla consequat massa
